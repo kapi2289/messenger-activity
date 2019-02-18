@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+
+    "name": "Messenger Activity",
+    "version": "0.0.1",
+    "description": "You can see when someone enters a conversation with you.",
+
+    "permissions": [
+        "webRequest",
+        "tabs",
+        "*://*.facebook.com/messages*",
+        "*://*.messenger.com/*"
+    ],
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.facebook.com/messages*", "*://*.messenger.com/*"],
+            "js": ["index.js"]
+        }
+    ]
+}
