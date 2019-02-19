@@ -3,7 +3,8 @@ function onPull(data) {
     let decoder = new TextDecoder("utf-8");
 
     filter.ondata = function(event) {
-        let json = JSON.parse(decoder.decode(event.data, {stream: true}).split("for (;;);")[1]);
+        let str = decoder.decode(event.data, {stream: true});
+        let json = JSON.parse(str.substr(str.search('{')));
         browser.tabs.sendMessage(data.tabId, json);
 
         filter.write(event.data);
