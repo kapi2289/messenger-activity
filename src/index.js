@@ -2,7 +2,7 @@ var cache = {};
 var current = null;
 
 function refresh() {
-    let profile_image = document.querySelector('#js_b ._4ld-');
+    let profile_image = document.querySelector('._3tkv ._4ld-');
     if(cache[current]) {
         profile_image.classList.add("in_thread");
     } else {
