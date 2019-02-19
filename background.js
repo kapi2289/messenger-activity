@@ -5,7 +5,10 @@ function onPull(data) {
     filter.ondata = function(event) {
         let str = decoder.decode(event.data, {stream: true});
         let json = JSON.parse(str.substr(str.search('{')));
-        browser.tabs.sendMessage(data.tabId, json);
+
+        json.ms.forEach(function(m) {
+            if(m.type === "t_tp") browser.tabs.sendMessage(data.tabId, m);
+        });
 
         filter.write(event.data);
         filter.disconnect();
