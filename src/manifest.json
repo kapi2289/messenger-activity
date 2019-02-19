@@ -4,6 +4,14 @@
     "name": "Messenger Activity",
     "version": "0.0.1",
     "description": "You can see when someone enters a conversation with you.",
+    "author": "kapi2289",
+    "homepage_url": "https://github.com/kapi2289/messenger-activity",
+
+    "applications": {
+        "gecko": {
+            "id": "messenger-activity@kapiz.pl"
+        }
+    },
 
     "permissions": [
         "webRequest",
