@@ -36,6 +36,10 @@ function onGraphQLBatch(request) {
     }
 }
 
+function onRefreshData(request) {
+    browser.tabs.sendMessage(request.tabId, {type: "refresh"});
+}
+
 browser.webRequest.onBeforeRequest.addListener(
     onPull,
     {urls: ["*://*.facebook.com/pull*", "*://*.messenger.com/pull*"]},
@@ -46,4 +50,9 @@ browser.webRequest.onBeforeRequest.addListener(
     onGraphQLBatch,
     {urls: ["*://*.facebook.com/api/graphqlbatch*", "*://*.messenger.com/api/graphqlbatch*"]},
     ["requestBody"]
+);
+
+browser.webRequest.onCompleted.addListener(
+    onRefreshData,
+    {urls: ["*://*.facebook.com/api/graphqlbatch*", "*://*.messenger.com/api/graphqlbatch*"]}
 );

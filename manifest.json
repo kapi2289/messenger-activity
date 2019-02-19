@@ -13,6 +13,10 @@
         "*://*.messenger.com/*"
     ],
 
+    "web_accessible_resources": [
+        "utils.css"
+    ],
+
     "background": {
         "scripts": ["background.js"]
     },
@@ -20,7 +24,8 @@
     "content_scripts": [
         {
             "matches": ["*://*.facebook.com/messages*", "*://*.messenger.com/*"],
-            "js": ["index.js"]
+            "js": ["index.js"],
+            "css": ["utils.css"]
         }
     ]
 }
