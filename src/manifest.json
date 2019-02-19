@@ -3,7 +3,7 @@
 
     "name": "Messenger Activity",
     "version": "0.0.1",
-    "description": "You can see when someone enters a conversation with you.",
+    "description": "When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.",
     "author": "kapi2289",
     "homepage_url": "https://github.com/kapi2289/messenger-activity",
 
