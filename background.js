@@ -1,16 +1,25 @@
 function onPull(data) {
     let filter = browser.webRequest.filterResponseData(data.requestId);
     let decoder = new TextDecoder("utf-8");
+    let encoder = new TextEncoder();
+
+    let str = "";
 
     filter.ondata = function(event) {
-        let str = decoder.decode(event.data, {stream: true});
+        str += decoder.decode(event.data, {stream: true});
+    }
+
+    filter.onstop = function(event) {
+        console.debug(str);
         let json = JSON.parse(str.substr(str.search('{')));
 
-        json.ms.forEach(function(m) {
-            if(m.type === "t_tp") browser.tabs.sendMessage(data.tabId, m);
-        });
+        if(json.ms) {
+            json.ms.forEach(function(m) {
+                if(m.type === "t_tp") browser.tabs.sendMessage(data.tabId, m);
+            });
+        }
 
-        filter.write(event.data);
+        filter.write(encoder.encode(str));
         filter.disconnect();
     }
 }
