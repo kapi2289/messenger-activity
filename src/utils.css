@@ -1,4 +1,9 @@
-.in_thread {
-    border: 2px solid #d32f2f;
+._3tkv ._4ld- {
+    border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
+    transition: border-color 250ms ease-in-out;
+}
+
+.in_thread {
+    border-color: #d32f2f !important;
 }
