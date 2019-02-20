@@ -1,5 +1,5 @@
 ._3tkv ._4ld- {
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid transparent;
     border-radius: 50%;
     transition: border-color 250ms ease-in-out;
 }
