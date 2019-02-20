@@ -31,8 +31,8 @@ function onGraphQLBatch(request) {
     let query = JSON.parse(data.get("queries"));
     let o = query.o0;
 
-    if(o.doc_id == "2289069757800221") {
-        browser.tabs.sendMessage(request.tabId, {type: "enter", data: {id: o.query_params.threadFBID}});
+    if(o.doc_id == "1777357372370450" || o.doc_id == "2289069757800221" || o.doc_id == "2150199688342867") {
+        browser.tabs.sendMessage(request.tabId, {type: "enter", data: {id: o.query_params.threadFBID || o.query_params.id}});
     }
 }
 
