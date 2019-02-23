@@ -7,5 +7,5 @@
 ## Description
 When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.
 
-![](https://raw.githubusercontent.com/kapi2289/messenger-activity/master/resources/not_in_thread.png)
-![](https://raw.githubusercontent.com/kapi2289/messenger-activity/master/resources/in_thread.png)
+![](https://raw.githubusercontent.com/kapi2289/messenger-activity/master/_resources/not_in_thread.png)
+![](https://raw.githubusercontent.com/kapi2289/messenger-activity/master/_resources/in_thread.png)
