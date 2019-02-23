@@ -16,6 +16,7 @@
     "permissions": [
         "webRequest",
         "webRequestBlocking",
+        "storage",
         "*://*.facebook.com/messages*",
         "*://*.messenger.com/*"
     ],
@@ -34,5 +35,9 @@
             "js": ["main/index.js"],
             "css": ["main/utils.css"]
         }
-    ]
+    ],
+
+    "options_ui": {
+        "page": "options/index.html"
+    }
 }
