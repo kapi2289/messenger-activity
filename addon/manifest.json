@@ -22,22 +22,22 @@
     ],
 
     "web_accessible_resources": [
-        "main/utils.css"
+        "css/utils.css"
     ],
 
     "background": {
-        "scripts": ["main/background.js"]
+        "scripts": ["dist/background.js"]
     },
 
     "content_scripts": [
         {
             "matches": ["*://*.facebook.com/messages*", "*://*.messenger.com/*"],
-            "js": ["main/index.js"],
-            "css": ["main/utils.css"]
+            "js": ["dist/main.js"],
+            "css": ["css/utils.css"]
         }
     ],
 
     "options_ui": {
-        "page": "options/index.html"
+        "page": "options.html"
     }
 }

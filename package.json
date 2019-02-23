@@ -1,0 +1,29 @@
+{
+  "name": "messenger-activity",
+  "version": "0.0.3",
+  "description": "When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "webpack --mode development",
+    "dev": "npm run development",
+    "watch": "npm run development -- --watch",
+    "production": "webpack --mode production",
+    "prod": "npm run production",
+    "deploy": "npm run production && web-ext build -s addon/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapi2289/messenger-activity.git"
+  },
+  "author": "Kacper Ziubryniewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapi2289/messenger-activity/issues"
+  },
+  "homepage": "https://github.com/kapi2289/messenger-activity#readme",
+  "devDependencies": {
+    "web-ext": "^3.0.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}
