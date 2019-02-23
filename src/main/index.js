@@ -1,22 +1,27 @@
-var cache = {};
-var current = null;
+import $ from 'jquery'
+
+var cache = {}
+var current = null
 
 function refresh() {
-    let profile_image = document.querySelector('._3tkv ._4ld-');
-    if(cache[current]) {
-        profile_image.classList.add("in_thread");
-    } else {
-        profile_image.classList.remove("in_thread");
-    }
+    const className = "in_thread"
+    let profileImage = $('._3tkv ._4ld-')
+
+    if(cache[current]) profileImage.addClass(className)
+    else profileImage.removeClass(className)
 }
 
-browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if(request.type == "msg") {
-        cache[request.data.from] = (request.data.st === 9);
-        refresh();
-    } else if(request.type == "enter") {
-        current = request.data.id;
-    } else if(request.type == "refresh") {
-        refresh();
-    }
-});
+function onMessage(data) {
+    cache[data.from] = (data.st === 9)
+    refresh()
+}
+
+function onEnter(data) { current = data.id }
+
+function onRefresh() { refresh() }
+
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if(request.type == "msg") onMessage(request.data)
+    else if(request.type == "enter") onEnter(request.data)
+    else if(request.type == "refresh") onRefresh()
+})
