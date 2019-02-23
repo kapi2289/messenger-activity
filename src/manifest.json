@@ -21,18 +21,18 @@
     ],
 
     "web_accessible_resources": [
-        "utils.css"
+        "main/utils.css"
     ],
 
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["main/background.js"]
     },
 
     "content_scripts": [
         {
             "matches": ["*://*.facebook.com/messages*", "*://*.messenger.com/*"],
-            "js": ["index.js"],
-            "css": ["utils.css"]
+            "js": ["main/index.js"],
+            "css": ["main/utils.css"]
         }
     ]
 }
