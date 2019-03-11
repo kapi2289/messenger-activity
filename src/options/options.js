@@ -1,16 +1,20 @@
+import $ from 'jquery'
+import defaults from '../defaults'
+
 function saveOptions(e) {
     browser.storage.sync.set({
-        showNotifications: document.querySelector("#show-notifications").checked
+        showNotifications: $("#show-notifications")[0].checked,
+        borderColor: $("#border-color").val()
     })
     e.preventDefault()
 }
 
 function restoreOptions() {
-    let gettingItem = browser.storage.sync.get('showNotifications')
-    gettingItem.then(res => {
-        document.querySelector("#show-notifications").checked = res.showNotifications || false
+    browser.storage.sync.get(['showNotifications', 'borderColor']).then(res => {
+        $("#show-notifications")[0].checked = res.showNotifications || defaults.showNotifications
+        $("#border-color").val(res.borderColor || defaults.borderColor)
     })
 }
 
-document.addEventListener('DOMContentLoaded', restoreOptions)
-document.querySelector("form").addEventListener("submit", saveOptions)
+$(document).ready(restoreOptions)
+$('form').submit(saveOptions)
