@@ -17,4 +17,4 @@ function restoreOptions() {
 }
 
 $(document).ready(restoreOptions)
-$('form').submit(saveOptions)
+$('input').change(saveOptions)
