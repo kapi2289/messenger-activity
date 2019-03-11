@@ -1,4 +1,4 @@
 export default {
-    showNotifications: false,
+    // showNotifications: false,
     borderColor: '#d32f2f',
 }
