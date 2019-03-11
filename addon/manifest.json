@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "Messenger Activity",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.",
     "author": "kapi2289",
     "homepage_url": "https://github.com/kapi2289/messenger-activity",
