@@ -6,4 +6,6 @@ export function encodeResponse(input) { return (new TextEncoder).encode(input) }
 
 export function getUrlParam(url, param) { return (new URLSearchParams(url)).get(param) }
 
+export function timestamp() { return new Date().getTime() }
+
 export default { parseJSON, decodeResponse, encodeResponse, getUrlParam }

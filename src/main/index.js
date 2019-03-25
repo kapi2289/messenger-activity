@@ -1,14 +1,20 @@
 import $ from 'jquery'
 import defaults from '../defaults';
+import { timestamp } from '../utils';
 
 var cache = {}
 var current = null
 
+const timeout = 30000; // miliseconds
+
+function isValid(ts) {
+    return timestamp() < ts + timeout
+}
+
 function refresh() {
-    const className = "in_thread"
     let profileImage = $('._3tkv ._4ld-')
 
-    if(cache[current]) {
+    if(cache[current] && isValid(cache[current])) {
         browser.storage.sync.get('borderColor').then(res => {
             profileImage.css('border-color', res.borderColor || defaults.borderColor)
         })
@@ -18,7 +24,7 @@ function refresh() {
 }
 
 function onMessage(data) {
-    cache[data.from] = (data.st === 9)
+    cache[data.from] = (data.st === 9) ? timestamp() : undefined
     refresh()
 }
 
