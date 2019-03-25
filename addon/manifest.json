@@ -44,5 +44,15 @@
     "options_ui": {
         "page": "options.html",
         "browser_style": true
+    },
+
+    "page_action": {
+        "browser_style": true,
+        "default_icon": {
+            "19": "icons/19.png",
+            "38": "icons/38.png"
+        },
+        "default_title": "Messenger Activity",
+        "show_matches": ["*://*.facebook.com/messages*", "*://*.messenger.com/*"]
     }
 }
