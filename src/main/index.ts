@@ -1,6 +1,6 @@
 import * as $ from "jquery";
 import defaults from "../defaults";
-import {IFacebookActivityResponse, timestamp} from "../utils";
+import {elementToUserId, IFacebookActivityResponse, timestamp} from "../utils";
 
 const cache: { [x: string]: number | undefined } = {};
 let current: string | undefined;
@@ -12,6 +12,10 @@ function isValid(ts: number) {
 }
 
 function refresh() {
+    if (!cache[current]) {
+        current = elementToUserId($("li._5l-3._1ht1._23_m div._5l-3._1ht5"));
+    }
+
     const profileImage = $("._3tkv ._4ld-");
 
     if (cache[current] && isValid(cache[current])) {
@@ -24,17 +28,24 @@ function refresh() {
 }
 
 function onMessage(data: { from: string, st: number }) {
-    cache[data.from] = data.st === 9 ? timestamp() : undefined;
+    cache[data.from] = data.st === 9 || data.st === 1 ? timestamp() : undefined;
     refresh();
 }
 
 function onEnter(data: { id: string }) {
     current = data.id;
+    refresh();
 }
 
 function onRefresh() {
     refresh();
 }
+
+$(document).on("click", "li._5l-3._1ht1", (e: JQuery.ClickEvent) => {
+    const target = $(e.target).parents("div._5l-3._1ht5");
+    const id = elementToUserId(target);
+    onEnter({id});
+});
 
 browser.runtime.onMessage.addListener((request: { type: string, data: IFacebookActivityResponse | { id: string } }) => {
     if (request.type === "msg") {

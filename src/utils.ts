@@ -18,6 +18,10 @@ export function timestamp() {
     return new Date().getTime();
 }
 
+export function elementToUserId(el: JQuery<any>) {
+    return el.attr("id").split(":")[1] || undefined;
+}
+
 export interface IFacebookActivityResponse {
     type: string;
     from: string;
