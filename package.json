@@ -8,7 +8,9 @@
     "lint-check": "tslint src/**/*.ts",
     "development": "webpack --mode development",
     "dev": "npm run development",
-    "watch": "npm run development -- --watch",
+    "webpack-watch": "npm run development -- --watch",
+    "web-ext-watch": "web-ext run -s addon/",
+    "watch": "npm run web-ext-watch | npm run webpack-watch",
     "production": "webpack --mode production",
     "prod": "npm run production",
     "deploy": "npm run production && web-ext build -s addon/"
