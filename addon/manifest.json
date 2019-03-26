@@ -53,6 +53,9 @@
             "38": "icons/38.png"
         },
         "default_title": "Messenger Activity",
-        "show_matches": ["*://*.facebook.com/messages*", "*://*.messenger.com/*"]
+        "show_matches": [
+            "*://*.facebook.com/messages/t/*",
+            "*://*.messenger.com/t/*"
+        ]
     }
 }
