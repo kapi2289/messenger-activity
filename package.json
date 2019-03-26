@@ -1,6 +1,6 @@
 {
   "name": "messenger-activity",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
