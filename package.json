@@ -4,6 +4,8 @@
   "description": "When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint-check -- --fix",
+    "lint-check": "tslint src/**/*.ts",
     "development": "webpack --mode development",
     "dev": "npm run development",
     "watch": "npm run development -- --watch",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@types/jquery": "^3.3.29",
     "ts-loader": "^5.3.3",
+    "tslint": "^5.14.0",
     "typescript": "^3.3.4000",
     "web-ext": "^3.0.0",
     "web-ext-types": "^3.1.0",
