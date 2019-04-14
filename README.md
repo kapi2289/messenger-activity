@@ -1,8 +1,7 @@
 # Messenger Activity
 
-[![Mozilla Add-on](https://img.shields.io/amo/v/messenger-activity.svg?style=flat-square)](https://addons.mozilla.org/pl/firefox/addon/messenger-activity/)
-[![Mozilla Add-on](https://img.shields.io/amo/stars/messenger-activity.svg?style=flat-square)](https://addons.mozilla.org/pl/firefox/addon/messenger-activity/)
-[![Mozilla Add-on](https://img.shields.io/amo/users/messenger-activity.svg?style=flat-square)](https://addons.mozilla.org/pl/firefox/addon/messenger-activity/)
+## ADDON REMOVED
+Facebook doesn't provide the information about conversations enters anymore, so I need to remove this addon. I'm leaving this repository archived. Thanks!
 
 ## Description
 When someone enters a conversation with you on Messenger from a mobile phone, their profile image will have a red border.
